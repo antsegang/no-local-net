@@ -2,23 +2,28 @@
 
 ## **1. Introducción**
 
-Este software está protegido bajo la licencia **Creative Commons Atribución-No Comercial-Sin Derivadas 4.0 Internacional (CC BY-NC-ND 4.0)**. 
+Este software está protegido por la licencia **Creative Commons Atribución-No Comercial-Sin Derivadas 4.0 Internacional (CC BY-NC-ND 4.0)**. 
 
 ---
 
 ## **2. Uso Autorizado**
 
-✅ **Usar el software** con fines personales, educativos y de investigación.  
-✅ **Ejecutar y probar el software** en entornos de desarrollo y simulación.  
-✅ **Distribuir copias exactas del código** siempre que se mantenga esta licencia y se reconozca la autoría.  
+✅ **Uso personal, educativo y de investigación**: El software puede ser utilizado con fines no comerciales.  
+✅ **Ejecutar y probar**: Puede ser ejecutado y probado en entornos de desarrollo y simulación.  
+✅ **Distribución de copias exactas**: Se puede distribuir copias del software, siempre y cuando se mantenga esta licencia y se reconozca la autoría de los creadores.
 
 ---
 
 ## **3. Restricciones de Uso**
 
-❌ **No se permite su uso comercial** sin una autorización expresa por escrito.  
-❌ **No se pueden hacer modificaciones ni derivados** del software sin permiso.  
-❌ **No se puede redistribuir el software bajo una licencia diferente.**  
-❌ **No se pueden eliminar avisos de derechos de autor o atribuciones.**  
+❌ **Uso comercial prohibido**: No se permite el uso comercial sin una autorización expresa por escrito.  
+❌ **Modificaciones y derivados no permitidos**: No se pueden realizar modificaciones ni derivados del software sin permiso.  
+❌ **Redistribución con otra licencia prohibida**: No se puede redistribuir el software bajo una licencia diferente a la presente.  
+❌ **Eliminación de avisos de derechos de autor**: No se pueden eliminar los avisos de derechos de autor o de atribuciones de los creadores.
 
-Si deseas obtener permisos adicionales, contacta a Anthony Segura Angulo, tel.: +506 8750-6376, contact@no-local-net.ecolatam.com o visita https://no-local-net.ecolatam.com/contact
+Si deseas obtener permisos adicionales, por favor contacta a:
+
+📧 **Anthony Segura Angulo**  
+📞 **Teléfono**: +506 8750-6376  
+📧 **Correo electrónico**: contact@no-local-net.ecolatam.com  
+🌐 **Página web**: [https://no-local-net.ecolatam.com/contact](https://no-local-net.ecolatam.com/contact)

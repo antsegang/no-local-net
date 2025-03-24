@@ -14,9 +14,9 @@
 
 ## **Introducción**
 
-Este proyecto implementa una **blockchain descentralizada** basada en un novedoso mecanismo de consenso llamado **Proof of Entanglement (PoE)**, desarrollado en **Python** usando **FastAPI**. A diferencia de los modelos tradicionales como **Proof of Work (PoW)** y **Proof of Stake (PoS)**, el protocolo PoE introduce un método basado en **entrelazamientos criptográficos** entre nodos y bloques para validar la seguridad de la red.
+Este proyecto implementa una **blockchain descentralizada** basada en el mecanismo de consenso **Proof of Entanglement (PoE)**, desarrollado en **Python** utilizando **FastAPI**. A diferencia de otros protocolos tradicionales como **Proof of Work (PoW)** y **Proof of Stake (PoS)**, PoE utiliza **entrelazamientos criptográficos** entre nodos y bloques para garantizar la seguridad de la red.
 
-Esta blockchain está diseñada para soportar **contratos inteligentes escritos en Python**, asegurando eficiencia y seguridad en la ejecución de operaciones descentralizadas.
+La blockchain soporta la ejecución de **contratos inteligentes escritos en Python**, lo que permite una integración eficiente y segura de operaciones descentralizadas.
 
 ---
 
@@ -24,65 +24,65 @@ Esta blockchain está diseñada para soportar **contratos inteligentes escritos 
 
 ### 🔹 **Definición**
 
-Proof of Entanglement (**PoE**) es un mecanismo de consenso basado en la creación de entrelazamientos entre los nodos y los bloques dentro de la blockchain. En lugar de depender de minería intensiva (como PoW) o de validadores con grandes cantidades de tokens (como PoS), PoE garantiza la seguridad de la red a través de la interconexión de datos dentro de la cadena.
+Proof of Entanglement (**PoE**) es un innovador mecanismo de consenso basado en la creación de entrelazamientos entre los nodos y bloques dentro de la blockchain. En lugar de depender de la minería (PoW) o de validadores con grandes cantidades de tokens (PoS), PoE valida la seguridad de la red a través de la interconexión de datos entre nodos y bloques.
 
 ### 🔹 **¿Cómo funciona?**
 
-1. **Entrelazamiento de Nodos y Bloques:** Los nodos se entrelazan entre sí, y los bloques generan entrelazamientos con bloques de coherencia.
-2. **Generación de Claves de Coherencia:** Un bloque de coherencia genera una **coherence key**.
-3. **Predicción de Validación:** Los nodos generan predicciones basadas en sus **entanglement keys** y las de su pareja entrelazada.
-4. **Cálculo del Hash de Predicción:** La predicción de cada nodo se hashea utilizando su propia clave y la de su nodo entrelazado.
-5. **Comparación con la Coherence Key:** El consenso se logra eligiendo la predicción que más se aproxime al resultado del hasheo de la **coherence key**.
-6. **Validación del Bloque:** Si una predicción se acerca lo suficiente a la coherence key hasheada, el bloque es validado y agregado a la blockchain.
+1. **Entrelazamiento de Nodos y Bloques**: Los nodos se entrelazan entre sí, y los bloques generan entrelazamientos con bloques de coherencia.
+2. **Generación de Claves de Coherencia**: Un bloque de coherencia genera una **coherence key**.
+3. **Predicción de Validación**: Los nodos generan predicciones basadas en sus **entanglement keys** y las de su nodo entrelazado.
+4. **Cálculo del Hash de Predicción**: Cada nodo hashea su predicción usando su clave y la del nodo entrelazado.
+5. **Comparación con la Coherence Key**: El consenso se alcanza eligiendo la predicción que más se asemeje al resultado del hasheo de la **coherence key**.
+6. **Validación del Bloque**: Si la predicción es lo suficientemente precisa, el bloque se valida y se agrega a la blockchain.
 
 ---
 
 ## **Características principales**
 
-- ✅ **Mecanismo de consenso PoE** (seguro y eficiente sin necesidad de alta potencia de cómputo).
-- ✅ **Contratos inteligentes en Python** (ejecutados en un entorno de máquina virtual controlado).
-- ✅ **Soporte para tokens y NFTs** (compatibles con estándares inspirados en ERC-20 y ERC-721).
-- ✅ **Alta seguridad e inmutabilidad** gracias a los entrelazamientos criptográficos.
+- ✅ **Mecanismo de consenso PoE**: Seguro y eficiente, sin necesidad de una gran potencia computacional.
+- ✅ **Contratos inteligentes en Python**: Ejecutados en un entorno de máquina virtual controlado.
+- ✅ **Soporte para tokens y NFTs**: Implementación de estándares inspirados en ERC-20 y ERC-721.
+- ✅ **Alta seguridad e inmutabilidad**: Gracias a los entrelazamientos criptográficos.
 
 ---
 
 ## **Arquitectura del sistema**
 
 ### 📌 **1. Nodo Blockchain**
-Cada nodo en la red almacena la cadena de bloques y participa en el proceso de validación de bloques a través de PoE.
+Cada nodo en la red almacena la cadena de bloques y participa en la validación de los bloques a través de PoE.
 
 ### 📌 **2. Validación con PoE**
-Los nodos verifican la integridad de un bloque asegurando que su entrelazamiento con otros nodos y bloques sea válido.
+Los nodos verifican la integridad de los bloques asegurando que su entrelazamiento con otros nodos y bloques sea válido.
 
 ### 📌 **3. Contratos Inteligentes**
-Los contratos son ejecutados en un entorno aislado basado en Python.
+Los contratos inteligentes se ejecutan en un entorno aislado y controlado basado en Python.
 
 ### 📌 **4. Tokens y NFTs**
-Implementación de clases basadas en modelos similares a ERC-20 y ERC-721.
+Implementación de clases de tokens y NFTs, siguiendo modelos similares a ERC-20 y ERC-721.
 
 ---
 
 ## **Mecanismo de Consenso PoE**
 
-El protocolo PoE se basa en la predicción y validación de coherencia mediante entrelazamientos criptográficos. Su proceso es el siguiente:
+El protocolo PoE utiliza predicciones y validaciones basadas en entrelazamientos criptográficos. Su funcionamiento es el siguiente:
 
-1. **Cada nodo tiene una Entanglement Key**, la cual está ligada a otro nodo en la red.
-2. **Los bloques de coherencia generan una Coherence Key**, utilizada como referencia para la validación.
-3. **Cada nodo genera una predicción** basada en su Entanglement Key y la de su nodo entrelazado.
-4. **Las predicciones de los nodos son hasheadas** con sus claves y comparadas con la Coherence Key hasheada.
-5. **El consenso se logra** eligiendo la predicción más cercana al resultado del hasheo de la Coherence Key.
-6. **Si una predicción es válida**, el bloque es agregado a la blockchain.
+1. **Cada nodo tiene una Entanglement Key**: Una clave única vinculada a otro nodo de la red.
+2. **Los bloques de coherencia generan una Coherence Key**: Esta clave se utiliza para la validación de bloques.
+3. **Generación de predicciones**: Cada nodo genera una predicción basada en su Entanglement Key y la del nodo entrelazado.
+4. **Hash de las predicciones**: Las predicciones generadas son hasheadas con las claves correspondientes y comparadas con la Coherence Key hasheada.
+5. **Consenso**: Se alcanza el consenso seleccionando la predicción que más se aproxime al resultado del hash de la Coherence Key.
+6. **Validación del bloque**: Si la predicción es válida, el bloque se agrega a la blockchain.
 
-Este método garantiza que la seguridad de la red dependa del correcto entrelazamiento de datos en lugar de la potencia de cómputo o el staking de tokens.
+Este sistema garantiza la seguridad de la red sin depender de grandes recursos computacionales o tokens en staking.
 
 ---
 
 ## **Módulos del código**
 
-📂 `core/` - Implementación del protocolo blockchain y PoE.  
-📂 `smart_contracts/` - Ejecución de contratos inteligentes.  
-📂 `network/` - Comunicación entre nodos.  
-📂 `wallet/` - Generación y gestión de claves públicas y privadas.  
+- 📂 `core/` - Implementación del protocolo blockchain y PoE.
+- 📂 `smart_contracts/` - Ejecución de contratos inteligentes.
+- 📂 `network/` - Comunicación entre nodos.
+- 📂 `wallet/` - Gestión de claves públicas y privadas.
 
 ---
 
@@ -107,8 +107,6 @@ uvicorn app:app --port 5000
 Si deseas contribuir a este proyecto, por favor contacta a:
 
 📧 **absegura@no-local-net.ecolatam.com**  
-🌐 **https://no-local-net.ecolatam.com**  
+🌐 **https://no-local-net.ecolatam.com**
 
-Para más información sobre la licencia, revisa el archivo **LICENSE.md**.
-
----
+Para más detalles sobre la licencia, consulta el archivo **LICENSE.md**.
