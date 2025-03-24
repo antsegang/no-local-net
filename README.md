@@ -1,112 +1,301 @@
-# 📖 **README - no-local-net - Blockchain con Proof of Entanglement (PoE)**
+# 🌐 **no-local-net: Blockchain con Proof of Entanglement (PoE) - Documentación Técnica**
 
-## **Índice**
-1. [Introducción](#introducción)
-2. [¿Qué es la blockchain Proof of Entanglement (PoE)?](#qué-es-la-blockchain-proof-of-entanglement-poe)
-3. [Características principales](#características-principales)
-4. [Arquitectura del sistema](#arquitectura-del-sistema)
-5. [Mecanismo de Consenso PoE](#mecanismo-de-consenso-poe)
-6. [Módulos del código](#módulos-del-código)
-7. [Instalación y uso](#instalación-y-uso)
-8. [Contribuciones y contacto](#contribuciones-y-contacto)
-
----
-
-## **Introducción**
-
-Este proyecto implementa una **blockchain descentralizada** basada en el mecanismo de consenso **Proof of Entanglement (PoE)**, desarrollado en **Python** utilizando **FastAPI**. A diferencia de otros protocolos tradicionales como **Proof of Work (PoW)** y **Proof of Stake (PoS)**, PoE utiliza **entrelazamientos criptográficos** entre nodos y bloques para garantizar la seguridad de la red.
-
-La blockchain soporta la ejecución de **contratos inteligentes escritos en Python**, lo que permite una integración eficiente y segura de operaciones descentralizadas.
+## 📖 **Tabla de Contenidos**
+1. [Visión General](#-visión-general)
+2. [Arquitectura del Sistema](#-arquitectura-del-sistema)
+3. [Mecanismo de Consenso PoE](#-mecanismo-de-consenso-poe)
+4. [Componentes Clave](#-componentes-clave)
+5. [Flujo de Operaciones](#-flujo-de-operaciones)
+6. [API y Endpoints](#-api-y-endpoints)
+7. [Instalación y Configuración](#-instalación-y-configuración)
+8. [Seguridad y Penalizaciones](#-seguridad-y-penalizaciones)
+9. [Ejemplos de Uso](#-ejemplos-de-uso)
+10. [Contribución](#-contribución)
 
 ---
 
-## **¿Qué es la blockchain Proof of Entanglement (PoE)?**
+## 🌟 **Visión General**
 
-### 🔹 **Definición**
+**no-local-net** es una implementación de blockchain que utiliza un innovador mecanismo de consenso llamado **Proof of Entanglement (PoE)**, inspirado en conceptos de entrelazamiento cuántico. A diferencia de los sistemas tradicionales como Proof of Work (PoW) o Proof of Stake (PoS), PoE:
 
-Proof of Entanglement (**PoE**) es un innovador mecanismo de consenso basado en la creación de entrelazamientos entre los nodos y bloques dentro de la blockchain. En lugar de depender de la minería (PoW) o de validadores con grandes cantidades de tokens (PoS), PoE valida la seguridad de la red a través de la interconexión de datos entre nodos y bloques.
+- ✅ **Elimina la necesidad de minería intensiva**
+- ✅ **Utiliza entrelazamiento criptográfico entre nodos**
+- ✅ **Valida bloques mediante predicciones consensuadas**
+- ✅ **Soporta contratos inteligentes nativos en Python**
 
-### 🔹 **¿Cómo funciona?**
-
-1. **Entrelazamiento de Nodos y Bloques**: Los nodos se entrelazan entre sí, y los bloques generan entrelazamientos con bloques de coherencia.
-2. **Generación de Claves de Coherencia**: Un bloque de coherencia genera una **coherence key**.
-3. **Predicción de Validación**: Los nodos generan predicciones basadas en sus **entanglement keys** y las de su nodo entrelazado.
-4. **Cálculo del Hash de Predicción**: Cada nodo hashea su predicción usando su clave y la del nodo entrelazado.
-5. **Comparación con la Coherence Key**: El consenso se alcanza eligiendo la predicción que más se asemeje al resultado del hasheo de la **coherence key**.
-6. **Validación del Bloque**: Si la predicción es lo suficientemente precisa, el bloque se valida y se agrega a la blockchain.
-
----
-
-## **Características principales**
-
-- ✅ **Mecanismo de consenso PoE**: Seguro y eficiente, sin necesidad de una gran potencia computacional.
-- ✅ **Contratos inteligentes en Python**: Ejecutados en un entorno de máquina virtual controlado.
-- ✅ **Soporte para tokens y NFTs**: Implementación de estándares inspirados en ERC-20 y ERC-721.
-- ✅ **Alta seguridad e inmutabilidad**: Gracias a los entrelazamientos criptográficos.
+**Características principales:**
+- Protocolo de consenso basado en entrelazamiento nodal
+- Sistema de penalización para nodos maliciosos
+- Doble cadena de bloques (principal + coherencia)
+- Generación de wallets compatibles con BIP-39
 
 ---
 
-## **Arquitectura del sistema**
+## 🏗 **Arquitectura del Sistema**
 
-### 📌 **1. Nodo Blockchain**
-Cada nodo en la red almacena la cadena de bloques y participa en la validación de los bloques a través de PoE.
+### **Diagrama de Componentes**
+```mermaid
+graph TD
+    A[Nodo] --> B[Blockchain]
+    A --> C[Consenso PoE]
+    B --> D[Bloque Regular]
+    B --> E[Bloque de Coherencia]
+    C --> F[Validación Entrelazada]
+    D --> F
+    E --> F
+    F --> G[Cadena Validada]
+```
 
-### 📌 **2. Validación con PoE**
-Los nodos verifican la integridad de los bloques asegurando que su entrelazamiento con otros nodos y bloques sea válido.
-
-### 📌 **3. Contratos Inteligentes**
-Los contratos inteligentes se ejecutan en un entorno aislado y controlado basado en Python.
-
-### 📌 **4. Tokens y NFTs**
-Implementación de clases de tokens y NFTs, siguiendo modelos similares a ERC-20 y ERC-721.
-
----
-
-## **Mecanismo de Consenso PoE**
-
-El protocolo PoE utiliza predicciones y validaciones basadas en entrelazamientos criptográficos. Su funcionamiento es el siguiente:
-
-1. **Cada nodo tiene una Entanglement Key**: Una clave única vinculada a otro nodo de la red.
-2. **Los bloques de coherencia generan una Coherence Key**: Esta clave se utiliza para la validación de bloques.
-3. **Generación de predicciones**: Cada nodo genera una predicción basada en su Entanglement Key y la del nodo entrelazado.
-4. **Hash de las predicciones**: Las predicciones generadas son hasheadas con las claves correspondientes y comparadas con la Coherence Key hasheada.
-5. **Consenso**: Se alcanza el consenso seleccionando la predicción que más se aproxime al resultado del hash de la Coherence Key.
-6. **Validación del bloque**: Si la predicción es válida, el bloque se agrega a la blockchain.
-
-Este sistema garantiza la seguridad de la red sin depender de grandes recursos computacionales o tokens en staking.
+### **Capas Principales**
+1. **Capa de Nodos**: Gestiona comunicación P2P y emparejamientos
+2. **Capa de Consenso**: Implementa el algoritmo PoE
+3. **Capa de Blockchain**: Almacena dos cadenas paralelas:
+   - Cadena principal (transacciones)
+   - Cadena de coherencia (claves de validación)
+4. **Capa de Contratos**: Ejecución segura de smart contracts
 
 ---
 
-## **Módulos del código**
+## ⚙️ **Mecanismo de Consenso PoE**
 
-- 📂 `core/` - Implementación del protocolo blockchain y PoE.
-- 📂 `smart_contracts/` - Ejecución de contratos inteligentes.
-- 📂 `network/` - Comunicación entre nodos.
-- 📂 `wallet/` - Gestión de claves públicas y privadas.
+### **Fases del Proceso**
+
+1. **Emparejamiento de Nodos**:
+   - Cada nodo encuentra un par (`entangled_pair_id`)
+   - Generan claves entrelazadas (`key` y `entangled_pair_key`)
+
+2. **Creación de Bloques**:
+   ```python
+   # En blockchain.py
+   def create_block(self, node):
+       block = Block(index, prev_hash, transactions)
+       coherence_block = CoherenceBlock(block, node)
+       entangled_hash = hash(block.hash + coherence_block.hash)
+       return block, coherence_block, entangled_hash
+   ```
+
+3. **Generación de Predicciones**:
+   - Cada nodo calcula una predicción usando:
+     ```python
+     # En consensus.py
+     def generate_node_prediction(node_key, pair_key):
+         return hash(node_key + pair_key + nonce) % 100000
+     ```
+
+4. **Validación Consensuada**:
+   - Comparación con la `coherence_key` del bloque de coherencia
+   - Tolerancia del 10% (configurable)
+
+5. **Minería del Bloque**:
+   - El nodo con la predicción más cercana gana el derecho a minar
+   - Se añade a ambas cadenas (principal y coherencia)
 
 ---
 
-## **Instalación y uso**
+## 🔧 **Componentes Clave**
 
-```bash
-# Clonar el repositorio
-git clone https://github.com/antsegang/no-local-net.git
-cd no-local-net
+### **1. Nodo (`node.py`)**
+- Gestiona:
+  - Comunicación P2P
+  - Estado de la blockchain
+  - Emparejamientos
+  - Penalizaciones
 
-# Instalar dependencias
-pip install -r requirements.txt
+**Estructura principal:**
+```python
+class Node(BaseModel):
+    node_id: str
+    ip: str
+    port: int
+    blockchain: Blockchain
+    peers: Dict[str, str]
+    entangled_pair_id: Optional[str]
+    key: Optional[int]
+    # ... (otros campos)
+```
 
-# Ejecutar un nodo
-uvicorn app:app --port 5000
+### **2. Blockchain (`blockchain.py`)**
+- Mantiene dos cadenas paralelas:
+  - `chain`: Bloques regulares
+  - `coherence_chain`: Bloques de validación
+- Lógica de creación de bloques génesis
+
+### **3. Bloques**
+- **Bloque Regular (`block.py`)**:
+  ```python
+  class Block(BaseModel):
+      index: int
+      previous_hash: str
+      transactions: List[Transaction]
+      hash: str
+  ```
+  
+- **Bloque de Coherencia (`coherence_block.py`)**:
+  ```python
+  class CoherenceBlock(BaseModel):
+      coherence_key: int
+      node_key: int
+      entangled_node_key: int
+      # ... (otros campos)
+  ```
+
+### **4. Consenso (`consensus.py`)**
+Implementa las reglas PoE:
+```python
+class EntanglementConsensus:
+    def validate_score(self, prediction, hashed_key):
+        return abs(prediction - hashed_key) <= margin_error
+    # ... (otros métodos)
 ```
 
 ---
 
-## **Contribuciones y contacto**
+## 🔄 **Flujo de Operaciones**
 
-Si deseas contribuir a este proyecto, por favor contacta a:
+1. **Inicialización**:
+   ```bash
+   uvicorn app:app --port 5000
+   ```
 
-📧 **absegura@no-local-net.ecolatam.com**  
-🌐 **https://no-local-net.ecolatam.com**
+2. **Emparejamiento**:
+   ```python
+   POST /entanglement_request
+   {"remote_peer_id": "node_123"}
+   ```
 
-Para más detalles sobre la licencia, consulta el archivo **LICENSE.md**.
+3. **Transacción**:
+   ```python
+   POST /add_transaction
+   {"sender": "A", "receiver": "B", "amount": 1.5}
+   ```
+
+4. **Consenso**:
+   - Cuando se alcanza el límite de transacciones:
+     - Generación de bloques
+     - Creación de predicciones
+     - Validación consensuada
+
+5. **Minería**:
+   - El nodo ganador propaga el bloque
+   - Los demás nodos validan y sincronizan
+
+---
+
+## 📡 **API y Endpoints**
+
+| Endpoint                 | Método | Descripción                              |
+|--------------------------|--------|------------------------------------------|
+| `/run_node`              | POST   | Inicia un nodo                           |
+| `/node_info`             | GET    | Obtiene información del nodo             |
+| `/find_pair`             | GET    | Busca nodo para emparejar                |
+| `/blockchain`            | GET    | Devuelve toda la blockchain              |
+| `/add_transaction`       | POST   | Añade una transacción                    |
+| `/validate_blockchain`   | GET    | Valida la integridad de la blockchain    |
+
+**Ejemplo de llamada:**
+```python
+import requests
+response = requests.post('http://localhost:5000/add_transaction', 
+                         json={"sender": "A", "receiver": "B", "amount": 1.0})
+```
+
+---
+
+## 🛠 **Instalación y Configuración**
+
+### **Requisitos**
+- Python 3.10+
+- Dependencias:
+  ```bash
+  pip install fastapi pydantic coincurve requests
+  ```
+
+### **Configuración**
+1. Clonar repositorio:
+   ```bash
+   git clone https://github.com/antsegang/no-local-net.git
+   ```
+2. Iniciar nodo:
+   ```bash
+   uvicorn app:app --port 5000 --reload
+   ```
+3. Conectar peers:
+   ```python
+   POST /receive_peers
+   {"peer_id": "http://otro_nodo:5000"}
+   ```
+
+---
+
+## 🔒 **Seguridad y Penalizaciones**
+
+### **Mecanismo Anti-Spam**
+- **Penalizaciones**:
+  - 10 minutos de timeout tras 3 intentos fallidos
+  - Registro en `penalized_nodes`
+
+**Código relevante (node.py):**
+```python
+if len(pending_transactions) < limit:
+    penalized_nodes[node_id] = time.time()
+    times_penalized[node_id] += 1
+```
+
+### **Validaciones Clave**
+1. Firmas digitales en transacciones
+2. Coherencia entre cadenas
+3. Emparejamientos verificados
+
+---
+
+## 💻 **Ejemplos de Uso**
+
+### **1. Crear Wallet**
+```python
+wallet = Wallet()
+print(wallet.address)  # Ej: ΦxAbCdEf123...
+```
+
+### **2. Enviar Transacción**
+```python
+tx = Transaction(
+    sender="Alice",
+    receiver="Bob",
+    amount=5.0,
+    nonce=0
+)
+node.add_transaction(tx)
+```
+
+### **3. Consultar Blockchain**
+```python
+GET /blockchain
+# Devuelve estructura JSON con ambas cadenas
+```
+
+---
+
+## 🤝 **Contribución**
+
+**Guía para contribuir:**
+1. Reportar issues en GitHub
+2. Hacer fork y crear ramas descriptivas
+3. Enviar PRs con:
+   - Tests actualizados
+   - Documentación modificada
+
+**Estándares de Código:**
+- Type hints en todas las funciones
+- Logging consistente (usar `logger` global)
+- Docstrings al estilo Google
+
+---
+
+## 📬 **Contacto**
+
+Para más información:
+- **Email**: absegura@no-local-net.ecolatam.com
+- **Sitio Web**: [no-local-net.ecolatam.com](https://no-local-net.ecolatam.com)
+- **Teléfono**: +506 8750-6376
+
+**Licencia**: Creative Commons BY-NC-ND 4.0
