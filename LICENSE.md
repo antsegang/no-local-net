@@ -1,24 +1,23 @@
-# **LICENSE.md - Licencia de Uso del Software Blockchain PoE**
+```
+# 📜 Licencia Creative Commons BY-NC-ND 4.0  
 
-## **1. Introducción**
+## **Uso Permitido**  
+✅ **Personal/Educativo**: Libre uso en proyectos no comerciales.  
+✅ **Atribución**: Debe incluir crédito al autor:  
+```  
+"no-local-net" by Anthony Segura (https://no-local-net.ecolatam.com).  
+```
 
-Este software está protegido bajo la licencia **Creative Commons Atribución-No Comercial-Sin Derivadas 4.0 Internacional (CC BY-NC-ND 4.0)**. 
+## **Restricciones**  
+❌ **Prohibido uso comercial**: Sin autorización expresa.  
+❌ **No derivados**: No se pueden modificar o crear obras basadas.  
+❌ **Redistribución**: Solo bajo esta misma licencia.  
 
----
+## **Garantías**  
+⚠️ **Sin responsabilidad**: El autor no asume responsabilidad por daños derivados del uso.  
 
-## **2. Uso Autorizado**
-
-✅ **Usar el software** con fines personales, educativos y de investigación.  
-✅ **Ejecutar y probar el software** en entornos de desarrollo y simulación.  
-✅ **Distribuir copias exactas del código** siempre que se mantenga esta licencia y se reconozca la autoría.  
-
----
-
-## **3. Restricciones de Uso**
-
-❌ **No se permite su uso comercial** sin una autorización expresa por escrito.  
-❌ **No se pueden hacer modificaciones ni derivados** del software sin permiso.  
-❌ **No se puede redistribuir el software bajo una licencia diferente.**  
-❌ **No se pueden eliminar avisos de derechos de autor o atribuciones.**  
-
-Si deseas obtener permisos adicionales, contacta a Anthony Segura Angulo, tel.: +506 8750-6376, contact@no-local-net.ecolatam.com o visita https://no-local-net.ecolatam.com/contact
+## **Obtener Licencia Comercial**  
+Contactar a:  
+- **Email**: contact@no-local-net.ecolatam.com  
+- **Teléfono**: +506 8750-6376  
+```
